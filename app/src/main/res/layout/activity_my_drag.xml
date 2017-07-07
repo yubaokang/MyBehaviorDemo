@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.ybk.mybehaviordemo.view.MyDragLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_drag"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:background="#a41919"
+        android:gravity="center"
+        android:text="1" />
+
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:background="#1433ce"
+        android:gravity="center"
+        android:text="2" />
+
+    <TextView
+        android:id="@+id/tv3"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:background="#407472"
+        android:gravity="center"
+        android:text="3" />
+
+    <TextView
+        android:id="@+id/tv4"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:background="#14ceb2"
+        android:gravity="center"
+        android:text="4" />
+
+    <TextView
+        android:id="@+id/tv5"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:background="#14ce20"
+        android:gravity="center"
+        android:text="5" />
+
+    <TextView
+        android:id="@+id/tv6"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:background="#ce7114"
+        android:gravity="center"
+        android:text="6" />
+
+</com.example.ybk.mybehaviordemo.view.MyDragLayout>
