@@ -29,7 +29,8 @@
             android:label="@string/title_activity_my_drag"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activity.ScrollNextActivity" />
-        <activity android:name=".activity.BehaviorActivity"></activity>
+        <activity android:name=".activity.BehaviorActivity" />
+        <activity android:name=".myview.MyViewActivity"></activity>
     </application>
 
 </manifest>

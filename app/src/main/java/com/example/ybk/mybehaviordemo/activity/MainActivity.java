@@ -7,6 +7,7 @@ import android.view.View;
 
 import com.example.ybk.mybehaviordemo.R;
 import com.example.ybk.mybehaviordemo.fragment.ItemListDialogFragment;
+import com.example.ybk.mybehaviordemo.myview.MyViewActivity;
 
 public class MainActivity extends AppCompatActivity implements ItemListDialogFragment.Listener {
 
@@ -40,6 +41,9 @@ public class MainActivity extends AppCompatActivity implements ItemListDialogFra
                 break;
             case R.id.button6:
                 startActivity(new Intent(this, BehaviorActivity.class));
+                break;
+            case R.id.button7:
+                startActivity(new Intent(this, MyViewActivity.class));
                 break;
             default:
                 break;
