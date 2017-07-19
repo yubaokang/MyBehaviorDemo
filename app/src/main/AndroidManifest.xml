@@ -30,7 +30,9 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activity.ScrollNextActivity" />
         <activity android:name=".activity.BehaviorActivity" />
-        <activity android:name=".myview.MyViewActivity"></activity>
+        <activity android:name=".myview.MyViewActivity"/>
+        <activity android:name=".myview.MyViewActivity2"/>
+        <activity android:name=".myview.MyViewActivity3"/>
     </application>
 
 </manifest>

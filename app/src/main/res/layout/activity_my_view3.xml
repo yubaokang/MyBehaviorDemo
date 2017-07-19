@@ -3,7 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.example.ybk.mybehaviordemo.myview.MyView
+    <com.example.ybk.mybehaviordemo.myview.MyView3
+        android:id="@+id/myView3"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:onClick="click" />
 </LinearLayout>

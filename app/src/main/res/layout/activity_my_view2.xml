@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.example.ybk.mybehaviordemo.myview.MyView
+    <com.example.ybk.mybehaviordemo.myview.MyView2
+        android:id="@+id/myView2"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </LinearLayout>
