@@ -15,7 +15,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:onClick="click"
-        android:text="btn_bottom_dialog"
+        android:text="Messenger 信使"
         app:layout_constraintBaseline_toBaselineOf="@+id/ScrollingActivity"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/ScrollingActivity"

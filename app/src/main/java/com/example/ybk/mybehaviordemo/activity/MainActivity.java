@@ -21,16 +21,17 @@ public class MainActivity extends AppCompatActivity implements ItemListDialogFra
 
     @Override
     public void onItemClicked(int position) {
-
     }
 
     public void click(View view) {
         switch (view.getId()) {
-            case R.id.btn_bottom_dialog:
+            case R.id.btn_messenger:
                 ItemListDialogFragment.newInstance(102).show(getSupportFragmentManager(), "aaaaa");
                 break;
             case R.id.ScrollingActivity:
                 startActivity(new Intent(this, ScrollingActivity.class));
+                Intent intent=new Intent();
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 break;
             case R.id.button3:
                 startActivity(new Intent(this, MyActivity.class));

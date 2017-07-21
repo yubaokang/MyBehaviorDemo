@@ -10,16 +10,34 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".activity.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
+            <!-- android:process="www.ybk.com.process_2">&lt;!&ndash;全局进程 其他应用通过ShareUID方式可以和它奥在同一进程中&ndash;&gt; -->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="com.mainActivity" /> -->
+            <!-- <category android:name="android.intent.category.DEFAULT" /> -->
+            <!-- </intent-filter> -->
+            <intent-filter>
+                <action android:name="com.mainActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="hahaha" />
+
+                <data
+                    android:host="www.ybk.com"
+                    android:scheme="ybk" />
             </intent-filter>
         </activity>
+        <activity android:name=".gaojijinjie.GJJJActivity" />
         <activity
             android:name=".activity.ScrollingActivity"
             android:label="@string/title_activity_scrolling"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="com.mainActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".activity.MyActivity"
             android:label="@string/title_activity_my"
@@ -30,9 +48,33 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activity.ScrollNextActivity" />
         <activity android:name=".activity.BehaviorActivity" />
-        <activity android:name=".myview.MyViewActivity"/>
-        <activity android:name=".myview.MyViewActivity2"/>
-        <activity android:name=".myview.MyViewActivity3"/>
+        <activity android:name=".myview.MyViewActivity" />
+        <activity android:name=".myview.MyViewActivity2" />
+        <activity android:name=".myview.MyViewActivity3" />
+        <activity android:name=".SelectActivity">
+
+            <!-- android:process=":process1">&lt;!&ndash;: 私有进程&ndash;&gt; -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".gaojijinjie.messenger.MessengerService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":service" /> <!-- 指定进程 -->
+
+        <activity android:name=".gaojijinjie.messenger.MessengerActivity" />
+
+        <service
+            android:name=".gaojijinjie.ipc.BookManagerService"
+            android:exported="false"
+            android:process=":bookManagerService" />
+
+        <activity android:name=".gaojijinjie.ipc.BookActivity"></activity>
     </application>
 
 </manifest>
