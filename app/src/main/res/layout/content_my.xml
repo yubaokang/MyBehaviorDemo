@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.example.ybk.mybehaviordemo.view.NestParentLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.example.ybk.mybehaviordemo.nestBehavior.NestParentLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="300dp"
     android:layout_height="300dp"
     android:background="#4083ff">
 
-    <com.example.ybk.mybehaviordemo.view.NestChildView
+    <com.example.ybk.mybehaviordemo.nestBehavior.NestChildView
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:background="#40ff66" />
-</com.example.ybk.mybehaviordemo.view.NestParentLayout>
+</com.example.ybk.mybehaviordemo.nestBehavior.NestParentLayout>

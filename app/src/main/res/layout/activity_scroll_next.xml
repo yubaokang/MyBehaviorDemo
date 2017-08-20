@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#aa000000"
     android:orientation="vertical"
-    tools:context="com.example.ybk.mybehaviordemo.activity.ScrollNextActivity">
+    tools:context="com.example.ybk.mybehaviordemo.nextScroll.ScrollNextActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

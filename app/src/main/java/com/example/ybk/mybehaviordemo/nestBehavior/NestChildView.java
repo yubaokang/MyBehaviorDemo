@@ -1,4 +1,4 @@
-package com.example.ybk.mybehaviordemo.view;
+package com.example.ybk.mybehaviordemo.nestBehavior;
 
 import android.content.Context;
 import android.support.v4.view.NestedScrollingChild;
@@ -83,7 +83,6 @@ public class NestChildView extends View implements NestedScrollingChild {
     @Override
     public boolean isNestedScrollingEnabled() {
         return mScrollingChildHelper.isNestedScrollingEnabled();
-
     }
 
     @Override
@@ -94,7 +93,6 @@ public class NestChildView extends View implements NestedScrollingChild {
     @Override
     public void stopNestedScroll() {
         mScrollingChildHelper.stopNestedScroll();
-
     }
 
     @Override

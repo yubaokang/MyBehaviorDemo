@@ -3,18 +3,14 @@ package com.example.ybk.mybehaviordemo.nextScroll;
 import android.content.Context;
 import android.support.v4.view.NestedScrollingChild;
 import android.support.v4.view.NestedScrollingChildHelper;
-import android.support.v4.view.ViewCompat;
 import android.support.v4.widget.ViewDragHelper;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 
 import com.example.ybk.mybehaviordemo.utils.L;
-import com.example.ybk.mybehaviordemo.view.NestChildView;
-
-import java.util.Arrays;
+import com.example.ybk.mybehaviordemo.nestBehavior.NestChildView;
 
 /**
  * Created by ybk on 2017/6/13.
@@ -31,7 +27,6 @@ public class ScrollChildContainerLayout extends FrameLayout implements NestedScr
 
     private ViewDragHelper dragHelper;
 
-
     public ScrollChildContainerLayout(Context context) {
         this(context, null);
     }
@@ -43,7 +38,6 @@ public class ScrollChildContainerLayout extends FrameLayout implements NestedScr
     public ScrollChildContainerLayout(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init();
-
     }
 
     private void init() {
@@ -76,11 +70,11 @@ public class ScrollChildContainerLayout extends FrameLayout implements NestedScr
 
             @Override
             public void onViewReleased(View releasedChild, float xvel, float yvel) {
-                L.i(xvel + "-----" + yvel);
+                L.i("----child>>>"+xvel + "-----" + yvel);
 //                if (Math.abs(after_top - childTop) > 200 || Math.abs(after_left - childLeft) > 200) {
 //                    dragHelper.settleCapturedViewAt(5 * (after_top - childTop), 5 * (after_left - childLeft));
 //                } else {
-                    dragHelper.settleCapturedViewAt((int) (0.5 * (parentWidth - releasedChild.getWidth())), (int) (0.5 * (parentHeight - releasedChild.getHeight())));
+                    dragHelper.settleCapturedViewAt(0, (int) (0.5 * (parentHeight - releasedChild.getHeight())));
 //                }
                 invalidate();
             }

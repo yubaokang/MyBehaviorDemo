@@ -1,4 +1,4 @@
-package com.example.ybk.mybehaviordemo.view;
+package com.example.ybk.mybehaviordemo.drag;
 
 import android.content.Context;
 import android.support.annotation.Nullable;
@@ -59,11 +59,11 @@ public class MyDragLayout extends FrameLayout {
             @Override
             public void onViewReleased(View releasedChild, float xvel, float yvel) {
                 L.i(xvel + "-----" + yvel);
-                if (Math.abs(after_top - childTop) > 200 || Math.abs(after_left - childLeft) > 200) {
-                    dragHelper.settleCapturedViewAt(5 * (after_top - childTop), 5 * (after_left - childLeft));
-                } else {
-                    dragHelper.settleCapturedViewAt((int) (0.5 * (parentWidth - releasedChild.getWidth())), (int) (0.5 * (parentHeight - releasedChild.getHeight())));
-                }
+//                if (Math.abs(after_top - childTop) > 200 || Math.abs(after_left - childLeft) > 200) {
+//                    dragHelper.settleCapturedViewAt(5 * (after_left - childLeft), 5 * (after_top - childTop));
+//                } else {
+//                    dragHelper.settleCapturedViewAt((int) (0.5 * (parentWidth - releasedChild.getWidth())), (int) (0.5 * (parentHeight - releasedChild.getHeight())));
+//                }
                 invalidate();
             }
         });

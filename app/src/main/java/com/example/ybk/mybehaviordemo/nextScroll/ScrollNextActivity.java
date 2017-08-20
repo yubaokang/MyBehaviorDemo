@@ -1,11 +1,9 @@
-package com.example.ybk.mybehaviordemo.activity;
+package com.example.ybk.mybehaviordemo.nextScroll;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.example.ybk.mybehaviordemo.R;
-import com.example.ybk.mybehaviordemo.nextScroll.ScrollChildContainerLayout;
-import com.example.ybk.mybehaviordemo.nextScroll.ScrollNextContainerLayout;
 
 public class ScrollNextActivity extends AppCompatActivity {
     private ScrollChildContainerLayout child_0;

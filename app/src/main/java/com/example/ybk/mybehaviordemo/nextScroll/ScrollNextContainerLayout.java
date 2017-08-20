@@ -7,7 +7,6 @@ import android.support.v4.view.NestedScrollingParentHelper;
 import android.support.v4.widget.NestedScrollView;
 import android.util.AttributeSet;
 import android.view.View;
-import android.widget.LinearLayout;
 
 import com.example.ybk.mybehaviordemo.utils.L;
 
@@ -18,6 +17,8 @@ public class ScrollNextContainerLayout extends NestedScrollView implements Neste
 
     private NestedScrollingParentHelper parentHelper;
 
+//    private ViewDragHelper viewDragHelper;
+
     public ScrollNextContainerLayout(Context context) {
         this(context, null);
     }
@@ -26,10 +27,66 @@ public class ScrollNextContainerLayout extends NestedScrollView implements Neste
         this(context, attrs, 0);
     }
 
+    private int childTop;
+    private int afterTop;
+
     public ScrollNextContainerLayout(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         parentHelper = new NestedScrollingParentHelper(this);
+//        viewDragHelper = ViewDragHelper.create(this, 1.0f, new ViewDragHelper.Callback() {
+//            @Override
+//            public boolean tryCaptureView(View child, int pointerId) {
+//                childTop = child.getTop();
+//                return true;
+//            }
+//            @Override
+//            public int clampViewPositionVertical(View child, int top, int dy) {
+//                return top;
+//            }
+//
+//            @Override
+//            public int clampViewPositionHorizontal(View child, int left, int dx) {
+//                return left;
+//            }
+//
+//            @Override
+//            public void onViewPositionChanged(View changedView, int left, int top, int dx, int dy) {
+//                afterTop = top;
+//                super.onViewPositionChanged(changedView, left, top, dx, dy);
+//            }
+//
+//            @Override
+//            public void onViewReleased(View releasedChild, float xvel, float yvel) {
+//                L.i("----parent>>>"+xvel + "-----" + yvel);
+//                if (Math.abs(afterTop - childTop) > 200) {
+//                    viewDragHelper.settleCapturedViewAt(0, 5 * (afterTop - childTop));
+//                } else {
+//                    viewDragHelper.settleCapturedViewAt(500, 300);
+//                }
+//                invalidate();
+//            }
+//        });
     }
+
+
+//    @Override
+//    public void computeScroll() {
+//        super.computeScroll();
+//        if (viewDragHelper.continueSettling(true)) {
+//            invalidate();
+//        }
+//    }
+//
+//    @Override
+//    public boolean onInterceptTouchEvent(MotionEvent ev) {
+//        return viewDragHelper.shouldInterceptTouchEvent(ev);
+//    }
+//
+//    @Override
+//    public boolean onTouchEvent(MotionEvent ev) {
+//        viewDragHelper.processTouchEvent(ev);
+//        return true;
+//    }
 
     @Override
     public boolean onStartNestedScroll(View child, View target, int nestedScrollAxes) {

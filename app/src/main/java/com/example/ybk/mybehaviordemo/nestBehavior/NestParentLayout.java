@@ -1,4 +1,4 @@
-package com.example.ybk.mybehaviordemo.view;
+package com.example.ybk.mybehaviordemo.nestBehavior;
 
 import android.content.Context;
 import android.support.v4.view.NestedScrollingParent;
@@ -32,8 +32,8 @@ public class NestParentLayout extends FrameLayout implements NestedScrollingPare
         mScrollingParentHelper = new NestedScrollingParentHelper(this);
     }
 
-    /*
-    子类开始请求滑动
+    /**
+     * 子类开始请求滑动
      */
     @Override
     public boolean onStartNestedScroll(View child, View target, int nestedScrollAxes) {

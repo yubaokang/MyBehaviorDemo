@@ -9,8 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.MainActivity">
+        <activity android:name=".SelectActivity">
+            <!-- android:process=":process1">&lt;!&ndash;: 私有进程&ndash;&gt; -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".activity.MainActivity">
             <!-- android:process="www.ybk.com.process_2">&lt;!&ndash;全局进程 其他应用通过ShareUID方式可以和它奥在同一进程中&ndash;&gt; -->
             <!-- <intent-filter> -->
             <!-- <action android:name="com.mainActivity" /> -->
@@ -39,27 +47,19 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.MyActivity"
+            android:name=".nestBehavior.MyActivity"
             android:label="@string/title_activity_my"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".activity.MyDragActivity"
+            android:name=".drag.MyDragActivity"
             android:label="@string/title_activity_my_drag"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activity.ScrollNextActivity" />
+        <activity android:name=".nextScroll.ScrollNextActivity" />
         <activity android:name=".activity.BehaviorActivity" />
         <activity android:name=".myview.MyViewActivity" />
         <activity android:name=".myview.MyViewActivity2" />
         <activity android:name=".myview.MyViewActivity3" />
-        <activity android:name=".SelectActivity">
 
-            <!-- android:process=":process1">&lt;!&ndash;: 私有进程&ndash;&gt; -->
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
 
         <service
             android:name=".gaojijinjie.messenger.MessengerService"
@@ -75,6 +75,8 @@
             android:process=":bookManagerService" />
 
         <activity android:name=".gaojijinjie.ipc.BookActivity"></activity>
+
+        <activity android:name=".behavior.HeaderBehaviorActivity" />
     </application>
 
 </manifest>

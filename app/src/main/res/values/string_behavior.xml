@@ -1,0 +1,4 @@
+<resources>
+    <string name="my_behavior_header">com.example.ybk.mybehaviordemo.behavior.HeaderFloatBehavior</string>
+    <string name="my_behavior_header_scroll">com.example.ybk.mybehaviordemo.behavior.HeaderScrollingBehavior</string>
+</resources>

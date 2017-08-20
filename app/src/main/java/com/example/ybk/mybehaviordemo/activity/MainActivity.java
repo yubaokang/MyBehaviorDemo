@@ -6,10 +6,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.example.ybk.mybehaviordemo.R;
+import com.example.ybk.mybehaviordemo.behavior.HeaderBehaviorActivity;
+import com.example.ybk.mybehaviordemo.drag.MyDragActivity;
 import com.example.ybk.mybehaviordemo.fragment.ItemListDialogFragment;
 import com.example.ybk.mybehaviordemo.myview.MyViewActivity;
 import com.example.ybk.mybehaviordemo.myview.MyViewActivity2;
 import com.example.ybk.mybehaviordemo.myview.MyViewActivity3;
+import com.example.ybk.mybehaviordemo.nestBehavior.MyActivity;
+import com.example.ybk.mybehaviordemo.nextScroll.ScrollNextActivity;
 
 public class MainActivity extends AppCompatActivity implements ItemListDialogFragment.Listener {
 
@@ -30,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements ItemListDialogFra
                 break;
             case R.id.ScrollingActivity:
                 startActivity(new Intent(this, ScrollingActivity.class));
-                Intent intent=new Intent();
+                Intent intent = new Intent();
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 break;
             case R.id.button3:
@@ -53,6 +57,9 @@ public class MainActivity extends AppCompatActivity implements ItemListDialogFra
                 break;
             case R.id.button9:
                 startActivity(new Intent(this, MyViewActivity3.class));
+                break;
+            case R.id.button10:
+                startActivity(new Intent(this, HeaderBehaviorActivity.class));
                 break;
             default:
                 break;

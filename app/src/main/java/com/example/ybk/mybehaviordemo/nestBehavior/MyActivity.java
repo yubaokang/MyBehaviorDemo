@@ -1,4 +1,4 @@
-package com.example.ybk.mybehaviordemo.activity;
+package com.example.ybk.mybehaviordemo.nestBehavior;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

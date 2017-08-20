@@ -141,12 +141,16 @@
         tools:layout_constraintRight_creator="1"
         tools:layout_constraintTop_creator="1" />
 
-    <android.support.constraint.Guideline
-        android:id="@+id/guideline"
+    <Button
+        android:id="@+id/button10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="20dp"
-        tools:layout_editor_absoluteX="20dp"
-        tools:layout_editor_absoluteY="0dp" />
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:onClick="click"
+        android:text="Header_Behavior"
+        app:layout_constraintLeft_toLeftOf="@+id/button7"
+        app:layout_constraintRight_toRightOf="@+id/button7"
+        app:layout_constraintTop_toBottomOf="@+id/button7" />
 </android.support.constraint.ConstraintLayout>

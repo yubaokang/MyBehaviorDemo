@@ -1,11 +1,9 @@
-package com.example.ybk.mybehaviordemo.activity;
+package com.example.ybk.mybehaviordemo.drag;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.TextView;
 
 import com.example.ybk.mybehaviordemo.R;
-import com.example.ybk.mybehaviordemo.view.MyDragLayout;
 
 public class MyDragActivity extends AppCompatActivity {
 
