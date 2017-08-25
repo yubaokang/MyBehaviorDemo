@@ -96,7 +96,7 @@ public class NextContainerLayout extends LinearLayout implements NestedScrolling
      */
     @Override
     public void onNestedPreScroll(View target, int dx, int dy, int[] consumed) {
-        super.onNestedPreScroll(target, dx, dy, consumed);
+//        super.onNestedPreScroll(target, dx, dy, consumed);
         //getScrollY() 记录滑动的距离
         if (!ViewCompat.canScrollVertically(target,1)){
             scrollBy(0,dy);
