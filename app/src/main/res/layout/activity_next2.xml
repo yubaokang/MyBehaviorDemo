@@ -9,17 +9,17 @@
     <com.example.ybk.mybehaviordemo.nextScroll2.NextChildView
         android:id="@+id/nextChildView1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:background="#00ffff">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/title_activity_my_drag" />
+                android:layout_height="match_parent"
+                android:text="@string/large_text" />
         </LinearLayout>
 
     </com.example.ybk.mybehaviordemo.nextScroll2.NextChildView>

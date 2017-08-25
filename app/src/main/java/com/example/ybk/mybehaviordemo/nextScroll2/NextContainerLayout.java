@@ -6,7 +6,9 @@ import android.support.annotation.AttrRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.view.NestedScrollingParent;
+import android.support.v4.view.ViewCompat;
 import android.util.AttributeSet;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.LinearLayout;
 
@@ -41,7 +43,22 @@ public class NextContainerLayout extends LinearLayout implements NestedScrolling
      */
     @Override
     public boolean onStartNestedScroll(View child, View target, int nestedScrollAxes) {
-        return super.onStartNestedScroll(child, target, nestedScrollAxes);
+        return (nestedScrollAxes & ViewCompat.SCROLL_AXIS_VERTICAL) != 0;
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent ev) {
+        switch (ev.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                break;
+            case MotionEvent.ACTION_MOVE:
+                break;
+            case MotionEvent.ACTION_CANCEL:
+                break;
+            default:
+                break;
+        }
+        return super.onTouchEvent(ev);
     }
 
     /**
@@ -81,6 +98,10 @@ public class NextContainerLayout extends LinearLayout implements NestedScrolling
     public void onNestedPreScroll(View target, int dx, int dy, int[] consumed) {
         super.onNestedPreScroll(target, dx, dy, consumed);
         //getScrollY() 记录滑动的距离
+        if (!ViewCompat.canScrollVertically(target,1)){
+            scrollBy(0,dy);
+            consumed[1]=dy;
+        }
 //        if (dy > 0) {//向上滑动
 //            if (getScrollY() < mTopViewHeight) {//已经滑动的y距离小于上面View的距离，则还需要消费距离
 //                scrollBy(0, dy);
@@ -139,7 +160,7 @@ public class NextContainerLayout extends LinearLayout implements NestedScrolling
 //        } else {
 //            animateScroll(velocityY, computeDuration(velocityY), consumed);
 //        }
-        return super.onNestedFling(target,velocityX,velocityY,consumed);
+        return super.onNestedFling(target, velocityX, velocityY, consumed);
     }
 
     @Override
