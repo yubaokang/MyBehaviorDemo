@@ -3,14 +3,18 @@ package com.example.ybk.mybehaviordemo.nextScroll;
 import android.content.Context;
 import android.support.v4.view.NestedScrollingChild;
 import android.support.v4.view.NestedScrollingChildHelper;
+import android.support.v4.view.ViewCompat;
 import android.support.v4.widget.ViewDragHelper;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 
 import com.example.ybk.mybehaviordemo.utils.L;
 import com.example.ybk.mybehaviordemo.nestBehavior.NestChildView;
+
+import java.util.Arrays;
 
 /**
  * Created by ybk on 2017/6/13.
@@ -85,37 +89,37 @@ public class ScrollChildContainerLayout extends FrameLayout implements NestedScr
     @Override
     public boolean onTouchEvent(MotionEvent ev) {
         dragHelper.processTouchEvent(ev);
-        return true;
-//        float x = ev.getX();
-//        float y = ev.getY();
-//        int action = ev.getAction();
-//        switch (action) {
-//            case MotionEvent.ACTION_DOWN:
-//                mDownX = x;
-//                mDownY = y;
-//                //当开始滑动的时候，告诉父view
-//                startNestedScroll(ViewCompat.SCROLL_AXIS_HORIZONTAL | ViewCompat.SCROLL_AXIS_VERTICAL);
-//                break;
-//            case MotionEvent.ACTION_MOVE:
-//                int dy = (int) (y - mDownY);
-//                int dx = (int) (x - mDownX);
-//                if (dy < 0) {
-//                }
-//                //分发触屏事件给父类处理
-//                if (dispatchNestedPreScroll(dx, dy, consumed, offsetInWindow)) {
-//                    //减掉父类消耗的距离
-//                    dx -= consumed[0];
-//                    dy -= consumed[1];
-//                    Log.d(TAG, Arrays.toString(offsetInWindow));
-//                }
-//                offsetTopAndBottom(dy);
-////                offsetLeftAndRight(dx);
-//                break;
-//            case MotionEvent.ACTION_UP:
-//                stopNestedScroll();
-//                break;
-//        }
 //        return true;
+        float x = ev.getX();
+        float y = ev.getY();
+        int action = ev.getAction();
+        switch (action) {
+            case MotionEvent.ACTION_DOWN:
+                mDownX = x;
+                mDownY = y;
+                //当开始滑动的时候，告诉父view
+                startNestedScroll(ViewCompat.SCROLL_AXIS_HORIZONTAL | ViewCompat.SCROLL_AXIS_VERTICAL);
+                break;
+            case MotionEvent.ACTION_MOVE:
+                int dy = (int) (y - mDownY);
+                int dx = (int) (x - mDownX);
+                if (dy < 0) {
+                }
+                //分发触屏事件给父类处理
+                if (dispatchNestedPreScroll(dx, dy, consumed, offsetInWindow)) {
+                    //减掉父类消耗的距离
+                    dx -= consumed[0];
+                    dy -= consumed[1];
+                    Log.d(TAG, Arrays.toString(offsetInWindow));
+                }
+                offsetTopAndBottom(dy);
+//                offsetLeftAndRight(dx);
+                break;
+            case MotionEvent.ACTION_UP:
+                stopNestedScroll();
+                break;
+        }
+        return true;
     }
 
     @Override

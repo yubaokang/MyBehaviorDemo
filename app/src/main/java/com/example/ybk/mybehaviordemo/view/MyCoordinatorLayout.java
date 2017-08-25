@@ -24,7 +24,8 @@ public class MyCoordinatorLayout extends CoordinatorLayout {
         super(context, attrs, defStyleAttr);
     }
 
-    ////////////////////////////////////////////////////////////////    ////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////
+    //作为父View////////////////////////////////////////////////////////////////
     @Override
     public boolean onStartNestedScroll(View child, View target, int nestedScrollAxes) {
         L.i("----------3>>>onStartNestedScroll");
@@ -72,9 +73,11 @@ public class MyCoordinatorLayout extends CoordinatorLayout {
         L.i("----------3>>>getNestedScrollAxes");
         return super.getNestedScrollAxes();
     }
-    ////////////////////////////////////////////////////////////////    ////////////////////////////////////////////////////////////////
+    //作为父View////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////
 
-    ////////////////////////////////////////////////////////////////    ////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////
+    //作为子View////////////////////////////////////////////////////////////////
     @Override
     public void setNestedScrollingEnabled(boolean enabled) {
         L.i2("----------4>>>setNestedScrollingEnabled");
@@ -112,9 +115,9 @@ public class MyCoordinatorLayout extends CoordinatorLayout {
     }
 
     /**
-     * @param dx 表示子view此次滑动期间将要消耗的水平方法的距离
-     * @param dy 表示子view此次滑动期间将要消耗的垂直方法的距离
-     * @param consumed 一个两个长度的数组，这个数组传递给父view，如果父view要先行滑动，将会把消耗的距离通过此数据返回给子view
+     * @param dx             表示子view此次滑动期间将要消耗的水平方法的距离
+     * @param dy             表示子view此次滑动期间将要消耗的垂直方法的距离
+     * @param consumed       一个两个长度的数组，这个数组传递给父view，如果父view要先行滑动，将会把消耗的距离通过此数据返回给子view
      * @param offsetInWindow 父view先完成一个滑动后子view在窗口中的偏移值
      * @return
      */

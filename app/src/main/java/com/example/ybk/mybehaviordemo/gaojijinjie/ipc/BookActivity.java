@@ -39,7 +39,6 @@ public class BookActivity extends AppCompatActivity {
 
         @Override
         public void onServiceDisconnected(ComponentName name) {
-
         }
     };
 

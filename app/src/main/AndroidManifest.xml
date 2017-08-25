@@ -2,6 +2,30 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.ybk.mybehaviordemo">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <!-- 这个权限用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- 这个权限用于访问GPS定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- 用于读取手机当前的状态 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_GPS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.WRITE_APN_SETTINGS" />
+    <!-- 莹石所需 -->
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,6 +34,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".SelectActivity">
+
             <!-- android:process=":process1">&lt;!&ndash;: 私有进程&ndash;&gt; -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,8 +42,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".activity.MainActivity">
+
             <!-- android:process="www.ybk.com.process_2">&lt;!&ndash;全局进程 其他应用通过ShareUID方式可以和它奥在同一进程中&ndash;&gt; -->
             <!-- <intent-filter> -->
             <!-- <action android:name="com.mainActivity" /> -->
@@ -60,7 +85,6 @@
         <activity android:name=".myview.MyViewActivity2" />
         <activity android:name=".myview.MyViewActivity3" />
 
-
         <service
             android:name=".gaojijinjie.messenger.MessengerService"
             android:enabled="true"
@@ -74,9 +98,9 @@
             android:exported="false"
             android:process=":bookManagerService" />
 
-        <activity android:name=".gaojijinjie.ipc.BookActivity"></activity>
-
+        <activity android:name=".gaojijinjie.ipc.BookActivity" />
         <activity android:name=".behavior.HeaderBehaviorActivity" />
+        <activity android:name=".nextScroll2.Next2Activity"></activity>
     </application>
 
 </manifest>

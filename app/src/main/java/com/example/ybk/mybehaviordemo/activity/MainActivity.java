@@ -14,6 +14,7 @@ import com.example.ybk.mybehaviordemo.myview.MyViewActivity2;
 import com.example.ybk.mybehaviordemo.myview.MyViewActivity3;
 import com.example.ybk.mybehaviordemo.nestBehavior.MyActivity;
 import com.example.ybk.mybehaviordemo.nextScroll.ScrollNextActivity;
+import com.example.ybk.mybehaviordemo.nextScroll2.Next2Activity;
 
 public class MainActivity extends AppCompatActivity implements ItemListDialogFragment.Listener {
 
@@ -60,6 +61,9 @@ public class MainActivity extends AppCompatActivity implements ItemListDialogFra
                 break;
             case R.id.button10:
                 startActivity(new Intent(this, HeaderBehaviorActivity.class));
+                break;
+            case R.id.button11:
+                startActivity(new Intent(this, Next2Activity.class));
                 break;
             default:
                 break;

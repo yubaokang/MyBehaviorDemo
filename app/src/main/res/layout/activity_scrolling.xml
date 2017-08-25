@@ -8,7 +8,7 @@
     <android.support.design.widget.AppBarLayout
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/app_bar_height"
+        android:layout_height="match_parent"
         android:fitsSystemWindows="true"
         android:theme="@style/AppTheme.AppBarOverlay">
 
@@ -20,13 +20,13 @@
             app:contentScrim="?attr/colorPrimary"
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
-            <ImageView
+            <WebView
                 android:id="@+id/iv_content"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/bg"
                 android:contentDescription="@null"
                 android:fitsSystemWindows="true"
+                android:minHeight="360dp"
                 android:scaleType="fitXY"
                 app:layout_collapseMode="pin"
                 app:layout_collapseParallaxMultiplier="0.8"
