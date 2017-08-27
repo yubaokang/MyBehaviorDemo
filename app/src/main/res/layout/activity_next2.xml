@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.example.ybk.mybehaviordemo.nextScroll2.NextContainerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nextContainerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.example.ybk.mybehaviordemo.nextScroll2.Next2Activity">
 
     <com.example.ybk.mybehaviordemo.nextScroll2.NextChildView
-        android:id="@+id/nextChildView1"
+        android:id="@+id/topView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#00ffff">
@@ -25,7 +26,7 @@
     </com.example.ybk.mybehaviordemo.nextScroll2.NextChildView>
 
     <com.example.ybk.mybehaviordemo.nextScroll2.NextChildView
-        android:id="@+id/nextChildView2"
+        android:id="@+id/bottomView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#ff00ff">

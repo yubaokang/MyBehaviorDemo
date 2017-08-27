@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.ybk.mybehaviordemo.nextScroll3.NextNestedLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nextContainerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.ybk.mybehaviordemo.nextScroll3.Next3Activity">
+
+    <com.example.ybk.mybehaviordemo.nextScroll3.NextLinearLayout
+        android:id="@+id/nextLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/pageOne"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#aa4444"
+                android:text="@string/large_text"
+                android:textColor="#ffffff" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/pageTwo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/large_text" />
+        </LinearLayout>
+    </com.example.ybk.mybehaviordemo.nextScroll3.NextLinearLayout>
+</com.example.ybk.mybehaviordemo.nextScroll3.NextNestedLayout>

@@ -8,6 +8,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.view.NestedScrollingParent;
 import android.support.v4.view.ViewCompat;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -16,6 +17,13 @@ import android.widget.LinearLayout;
  * Created by ybk on 2017/8/25.
  */
 public class NextContainerLayout extends LinearLayout implements NestedScrollingParent {
+
+    private static final String TAG = "NextContainerLayout";
+    private NextChildView topView;
+    private NextChildView bottomView;
+
+    private int startY = 0;
+
     public NextContainerLayout(@NonNull Context context) {
         this(context, null);
     }
@@ -26,11 +34,17 @@ public class NextContainerLayout extends LinearLayout implements NestedScrolling
 
     public NextContainerLayout(@NonNull Context context, @Nullable AttributeSet attrs, @AttrRes int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+    }
+
+    @Override
+    protected void onFinishInflate() {
+        super.onFinishInflate();
         init();
     }
 
     public void init() {
-
+        topView = (NextChildView) getChildAt(0);
+        bottomView = (NextChildView) getChildAt(1);
     }
 
     /**
@@ -47,18 +61,28 @@ public class NextContainerLayout extends LinearLayout implements NestedScrolling
     }
 
     @Override
+    public boolean performClick() {
+        return super.performClick();
+    }
+
+    @Override
     public boolean onTouchEvent(MotionEvent ev) {
+        if (ev.getAction() == MotionEvent.ACTION_DOWN) {
+            performClick();
+        }
         switch (ev.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 break;
             case MotionEvent.ACTION_MOVE:
                 break;
             case MotionEvent.ACTION_CANCEL:
+            case MotionEvent.ACTION_UP:
+                scrollTo(0, 300);
                 break;
             default:
                 break;
         }
-        return super.onTouchEvent(ev);
+        return true;
     }
 
     /**
@@ -72,6 +96,7 @@ public class NextContainerLayout extends LinearLayout implements NestedScrolling
      */
     @Override
     public void onNestedScrollAccepted(View child, View target, int axes) {
+        startY = target.getBottom();
         super.onNestedScrollAccepted(child, target, axes);
     }
 
@@ -96,23 +121,51 @@ public class NextContainerLayout extends LinearLayout implements NestedScrolling
      */
     @Override
     public void onNestedPreScroll(View target, int dx, int dy, int[] consumed) {
-//        super.onNestedPreScroll(target, dx, dy, consumed);
-        //getScrollY() 记录滑动的距离
-        if (!ViewCompat.canScrollVertically(target,1)){
-            scrollBy(0,dy);
-            consumed[1]=dy;
+        Log.d(TAG, "onNestedPreScroll");
+        Log.d(TAG, target.getTop() + ":" + target.getBottom() + ":" + target.getScrollY());
+        if (target == topView) {
+            if (dy > 0) {
+                if (!ViewCompat.canScrollVertically(target, 1)) {
+                    scrollBy(0, dy);
+                    consumed[1] = dy;
+                } else {
+                    super.onNestedPreScroll(target, dx, dy, consumed);
+                }
+            } else {
+                if (!ViewCompat.canScrollVertically(target, -1)) {
+                    super.onNestedPreScroll(target, dx, dy, consumed);
+                } else {
+                    super.onNestedPreScroll(target, dx, dy, consumed);
+                }
+            }
+        } else if (target == bottomView) {
+            if (dy > 0) {
+                if (!ViewCompat.canScrollVertically(target, 1)) {
+                    super.onNestedPreScroll(target, dx, dy, consumed);
+                } else {
+                    super.onNestedPreScroll(target, dx, dy, consumed);
+                }
+            } else {
+                if (!ViewCompat.canScrollVertically(target, -1)) {
+                    scrollBy(0, dy);
+                    consumed[1] = dy;
+                } else {
+                    super.onNestedPreScroll(target, dx, dy, consumed);
+                }
+            }
         }
-//        if (dy > 0) {//向上滑动
-//            if (getScrollY() < mTopViewHeight) {//已经滑动的y距离小于上面View的距离，则还需要消费距离
-//                scrollBy(0, dy);
-//                consumed[1] = dy;
-//            }
-//        } else {//向下滚动
-//            if (getScrollY() >= 0 && !ViewCompat.canScrollVertically(target, -1)) {//方向参数  -1：顶部是否可以滚动，1：底部是否可以滚动
-//                scrollBy(0, dy);
-//                consumed[1] = dy;
-//            }
-//        }
+    }
+
+    @Override
+    public void onStopNestedScroll(View child) {
+        Log.d(TAG, "onStopNestedScroll");
+        if (topView == child) {
+            super.onStopNestedScroll(child);
+            if (startY - child.getBottom() > 30) {
+                animateScroll(child.getMeasuredHeight(), 300, false);
+            }
+            startY = 0;
+        }
     }
 
     /**
@@ -126,6 +179,7 @@ public class NextContainerLayout extends LinearLayout implements NestedScrolling
      */
     @Override
     public void onNestedScroll(View target, int dxConsumed, int dyConsumed, int dxUnconsumed, int dyUnconsumed) {
+        Log.d(TAG, "onNestedScroll() called with: target = [" + target + "], dxConsumed = [" + dxConsumed + "], dyConsumed = [" + dyConsumed + "], dxUnconsumed = [" + dxUnconsumed + "], dyUnconsumed = [" + dyUnconsumed + "]");
         super.onNestedScroll(target, dxConsumed, dyConsumed, dxUnconsumed, dyUnconsumed);
     }
 
@@ -223,7 +277,6 @@ public class NextContainerLayout extends LinearLayout implements NestedScrolling
                 mOffsetAnimator.setIntValues(currentOffset, 0);
                 mOffsetAnimator.start();
             }
-
         }
     }
 
@@ -247,15 +300,15 @@ public class NextContainerLayout extends LinearLayout implements NestedScrolling
     @Override
     public void scrollTo(int x, int y) {
 //        Log.d(TAG, "scrollTo() called with: x = [" + x + "], y = [" + y + "]");
-//        if (y < 0) {
-//            y = 0;
-//        }
+        if (y < 0) {
+            y = 0;
+        }
 //        if (y > mTopViewHeight) {
 //            y = mTopViewHeight;
 //        }
-//        if (y != getScrollY()) {
-//            super.scrollTo(x, y);
-//        }
+        if (y != getScrollY()) {
+            super.scrollTo(x, y);
+        }
     }
 
     @Override
