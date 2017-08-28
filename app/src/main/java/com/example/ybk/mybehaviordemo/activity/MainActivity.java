@@ -3,11 +3,13 @@ package com.example.ybk.mybehaviordemo.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 
 import com.example.ybk.mybehaviordemo.R;
 import com.example.ybk.mybehaviordemo.behavior.HeaderBehaviorActivity;
 import com.example.ybk.mybehaviordemo.drag.MyDragActivity;
+import com.example.ybk.mybehaviordemo.eventDemo.EventDemoActivity;
 import com.example.ybk.mybehaviordemo.fragment.ItemListDialogFragment;
 import com.example.ybk.mybehaviordemo.myview.MyViewActivity;
 import com.example.ybk.mybehaviordemo.myview.MyViewActivity2;
@@ -69,8 +71,18 @@ public class MainActivity extends AppCompatActivity implements ItemListDialogFra
             case R.id.button12:
                 startActivity(new Intent(this, Next3Activity.class));
                 break;
+            case R.id.button13:
+                startActivity(new Intent(this, EventDemoActivity.class));
+                break;
             default:
                 break;
         }
+    }
+
+
+    @Override
+    protected void onUserLeaveHint() {
+        Log.d("------", "onUserLeaveHint");
+        super.onUserLeaveHint();
     }
 }

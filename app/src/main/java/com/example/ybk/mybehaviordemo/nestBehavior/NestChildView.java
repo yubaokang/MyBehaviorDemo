@@ -1,5 +1,6 @@
 package com.example.ybk.mybehaviordemo.nestBehavior;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.support.v4.view.NestedScrollingChild;
 import android.support.v4.view.NestedScrollingChildHelper;
@@ -43,6 +44,7 @@ public class NestChildView extends View implements NestedScrollingChild {
         setNestedScrollingEnabled(true);
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     public boolean onTouchEvent(MotionEvent ev) {
         float x = ev.getX();

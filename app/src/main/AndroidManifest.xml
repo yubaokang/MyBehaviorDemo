@@ -101,7 +101,8 @@
         <activity android:name=".gaojijinjie.ipc.BookActivity" />
         <activity android:name=".behavior.HeaderBehaviorActivity" />
         <activity android:name=".nextScroll2.Next2Activity" />
-        <activity android:name=".nextScroll3.Next3Activity"></activity>
+        <activity android:name=".nextScroll3.Next3Activity" />
+        <activity android:name=".eventDemo.EventDemoActivity"></activity>
     </application>
 
 </manifest>

@@ -145,13 +145,10 @@
         android:id="@+id/button10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="12dp"
         android:onClick="click"
         android:text="Header_Behavior"
-        app:layout_constraintLeft_toLeftOf="@+id/button7"
-        app:layout_constraintRight_toRightOf="@+id/button7"
+        app:layout_constraintStart_toStartOf="@+id/button7"
         app:layout_constraintTop_toBottomOf="@+id/button7" />
 
     <Button
@@ -159,13 +156,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="-40dp"
+        android:layout_marginTop="12dp"
         android:onClick="click"
         android:text="next2"
-        app:layout_constraintHorizontal_bias="0.076"
         app:layout_constraintLeft_toRightOf="@+id/button10"
-        app:layout_constraintRight_toRightOf="@+id/button8"
         app:layout_constraintTop_toBottomOf="@+id/button8" />
 
     <Button
@@ -175,7 +169,17 @@
         android:layout_marginTop="8dp"
         android:onClick="click"
         android:text="Next3Activity"
-        app:layout_constraintStart_toEndOf="@+id/button11"
-        app:layout_constraintTop_toBottomOf="@+id/button9" />
+        app:layout_constraintStart_toStartOf="@+id/button10"
+        app:layout_constraintTop_toBottomOf="@+id/button10" />
+
+    <Button
+        android:id="@+id/button13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:onClick="click"
+        android:text="EventDemo"
+        app:layout_constraintStart_toEndOf="@+id/button12"
+        app:layout_constraintTop_toTopOf="@+id/button12" />
 
 </android.support.constraint.ConstraintLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.ybk.mybehaviordemo.eventDemo.EventDemoLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    tools:context="com.example.ybk.mybehaviordemo.eventDemo.EventDemoActivity">
+
+    <com.example.ybk.mybehaviordemo.eventDemo.EventDemoView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:background="#000"
+        android:gravity="center"
+        android:text="AAAAAAA"
+        android:textColor="#fff" />
+</com.example.ybk.mybehaviordemo.eventDemo.EventDemoLayout>
